@@ -1,0 +1,7 @@
+# Ignore everything
+*
+
+# Except specified files and directories
+!.gitignore
+!/nvim
+!/nvim/**
