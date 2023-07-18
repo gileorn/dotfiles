@@ -6,7 +6,6 @@ local keymap = vim.keymap
 -- GENERAL KEYMAPS
 ------------------------
 keymap.set("n", "<leader>%", ":luafile %<CR>", { desc = "Reload Lua Config" })
-keymap.set("n", "<leader>nh", ":nohl<CR>") -- remove highlight after search
 keymap.set("n", "x", '"_x') -- do not copy to register the symbol that are deleted with x
 
 -- change lines order
@@ -27,6 +26,11 @@ keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab" })
 keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" })
 keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab" })
 keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab" })
+
+-- copy file path
+keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy Filename" })
+keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File Path from Content Root" })
+keymap.set("n", "<leader>cP", ':let @+ = expand("%:p")<cr>', { desc = "Copy Absolute Path" })
 
 ------------------------
 -- PLUGIN KEYMAPS
