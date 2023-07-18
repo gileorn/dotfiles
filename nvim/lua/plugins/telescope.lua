@@ -13,7 +13,6 @@ end
 telescope.setup({
 	defaults = {
 		wrap_results = true,
-		-- layout_strategy = "vertical",
 		layout_config = {
 			vertical = { width = 0.999, height = 0.999 },
 			horizontal = { width = 0.999, height = 0.999 },
@@ -21,6 +20,9 @@ telescope.setup({
 		cache_picker = {
 			num_pickers = 10,
 			limit_entries = 20,
+		},
+		file_ignore_patterns = {
+			"package%-lock.json",
 		},
 		mappings = {
 			i = {

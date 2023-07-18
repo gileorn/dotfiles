@@ -52,7 +52,8 @@ keymap.set("n", "<leader>j", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" }
 keymap.set("n", "<leader>k", ":NvimTreeFindFile<CR>", { desc = "Reveal current file in Explorer" })
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find Files" })
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files including hidden" })
+keymap.set("n", "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find Files" })
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
 keymap.set(
 	"n",
