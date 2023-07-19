@@ -5,3 +5,8 @@
 !.gitignore
 !/nvim
 !/nvim/**
+!/tmux
+!/tmux/**
+
+# And ignore these additionally
+/tmux/plugins
