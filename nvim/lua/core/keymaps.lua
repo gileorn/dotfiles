@@ -22,10 +22,10 @@ keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make Splits Equal" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" })
 
 -- tabs
-keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab" })
-keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" })
-keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab" })
-keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab" })
+-- keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab" })
+-- keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" })
+-- keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab" })
+-- keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab" })
 
 -- copy file path
 keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy Filename" })
@@ -52,8 +52,13 @@ keymap.set("n", "<leader>j", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" }
 keymap.set("n", "<leader>k", ":NvimTreeFindFile<CR>", { desc = "Reveal current file in Explorer" })
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files including hidden" })
-keymap.set("n", "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find Files" })
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+keymap.set(
+	"n",
+	"<leader>fF",
+	"<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
+	{ desc = "Find Files including hidden" }
+)
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
 keymap.set(
 	"n",
@@ -73,4 +78,5 @@ keymap.set("n", "<leader>fp", "<cmd>Telescope pickers<cr>", { desc = "Pickers" }
 
 -- git blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
-keymap.set("n", "<leader>gu", ":GitBlameOpenCommitURL<CR>", { desc = "Open Commit URL" })
+keymap.set("n", "<leader>gf", ":GitBlameOpenFileURL<CR>", { desc = "Open File URL" })
+keymap.set("n", "<leader>gc", ":GitBlameOpenCommitURL<CR>", { desc = "Open Commit URL" })
