@@ -1,26 +1,21 @@
--- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
 	return
 end
 
--- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
 	return
 end
 
--- import typescript plugin safely
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
 	return
 end
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
 
--- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
-	-- set keybinds
 	keymap.set(
 		"n",
 		"<leader>ci",
@@ -94,47 +89,36 @@ local on_attach = function(client, bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go To Next Error" }
 	)
 
-	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
 		keymap.set(
 			"n",
 			"<leader>rf",
 			":TypescriptRenameFile<CR>",
 			{ noremap = true, silent = true, desc = "TS: Rename File" }
-		) -- rename file and update imports
+		)
 		keymap.set(
 			"n",
 			"<leader>co",
 			":TypescriptOrganizeImports<CR>",
 			{ noremap = true, silent = true, desc = "TS: Organize Imports" }
-		) -- organize imports (not in youtube nvim video)
+		)
 		keymap.set(
 			"n",
 			"<leader>cu",
 			":TypescriptRemoveUnused<CR>",
 			{ noremap = true, silent = true, desc = "TS: Remove Unused" }
-		) -- remove unused variables (not in youtube nvim video)
+		)
 	end
 end
 
--- used to enable autocompletion (assign to every lsp server config)
+-- enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
--- Change the Diagnostic symbols in the sign column (gutter)
--- (not in youtube nvim video)
--- local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
--- end
-
--- configure html server
 lspconfig["html"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure typescript server with plugin
 typescript.setup({
 	server = {
 		capabilities = capabilities,
@@ -142,30 +126,26 @@ typescript.setup({
 	},
 })
 
--- configure css server
 lspconfig["cssls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure tailwindcss server
 lspconfig["tailwindcss"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- configure emmet language server
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
--- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	settings = { -- custom settings for lua
+	settings = {
 		Lua = {
 			-- make the language server recognize "vim" global
 			diagnostics = {
@@ -181,27 +161,3 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
-
-lspconfig.eslint.setup({
-	capabilities = capabilities,
-	flags = { debounce_text_changes = 500 },
-	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = true
-		if client.resolved_capabilities.document_formatting then
-			local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = "*",
-				callback = function()
-					vim.lsp.buf.formatting_sync()
-				end,
-				group = au_lsp,
-			})
-		end
-	end,
-})
---
--- vim.api.nvim_create_autocmd('BufWritePre', {
---   pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
---   command = 'silent! EslintFixAll',
---   group = vim.api.nvim_create_augroup('MyAutocmdsJavaScripFormatting', {}),
--- })
