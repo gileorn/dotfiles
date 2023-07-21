@@ -13,7 +13,7 @@ null_ls.setup({
 	sources = {
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
-		formatting.prettier,
+		-- formatting.prettier,
 		formatting.stylua,
 		diagnostics.eslint_d.with({
 			condition = function(utils)

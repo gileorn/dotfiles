@@ -9,4 +9,5 @@
 !/tmux/**
 
 # And ignore these additionally
+/nvim/plugin
 /tmux/plugins
