@@ -21,12 +21,6 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Create Horizontal Split" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make Splits Equal" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" })
 
--- tabs
--- keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab" })
--- keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" })
--- keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab" })
--- keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab" })
-
 -- copy file path
 keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy Filename" })
 keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File Path from Content Root" })
