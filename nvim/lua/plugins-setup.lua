@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
 	-- ===================================
 	use("folke/which-key.nvim")
 	use("windwp/nvim-autopairs")
+	use("szw/vim-maximizer")
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
