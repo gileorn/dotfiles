@@ -4,24 +4,23 @@ if not setup then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
 
--- to setup format on save
+-- -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
-		--  to disable file types use
-		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
-		formatting.prettier,
-		formatting.stylua,
-		diagnostics.eslint_d.with({
+		-- formatting.prettier,
+		formatting.prettier.with({
 			condition = function(utils)
-				return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+				return utils.root_has_file("node_modules/prettier/package.json")
+				-- return utils.root_has_file_matches("prettier") -- refine the regex if needed again
 			end,
 		}),
+		formatting.stylua,
 	},
-	-- configure format on save
+
+	-- configure format on save with prettier
 	on_attach = function(current_client, bufnr)
 		if current_client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -31,7 +30,7 @@ null_ls.setup({
 				callback = function()
 					vim.lsp.buf.format({
 						filter = function(client)
-							--  only use null-ls for formatting instead of lsp server
+							-- only use null-ls for formatting instead of lsp server
 							return client.name == "null-ls"
 						end,
 						bufnr = bufnr,
