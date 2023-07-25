@@ -7,6 +7,7 @@ local keymap = vim.keymap
 ------------------------
 keymap.set("n", "<leader>%", ":luafile %<CR>", { desc = "Reload Lua Config" })
 keymap.set("n", "x", '"_x') -- do not copy to register the symbol that are deleted with x
+keymap.set("n", "c", '"_c') -- do not copy to register the target of change command
 
 -- change lines order
 -- these symbols are Alt+j and Alt+k on Mac
