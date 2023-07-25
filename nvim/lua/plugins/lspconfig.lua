@@ -136,11 +136,12 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
+-- disabling for now due to suggest trigger to anything in jsx
+-- lspconfig["emmet_ls"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+-- })
 
 lspconfig.eslint.setup({
 	on_attach = function(client, bufnr)
