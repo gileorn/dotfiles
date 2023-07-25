@@ -57,6 +57,7 @@ return require("packer").startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("lukas-reineke/indent-blankline.nvim")
+	use("kylechui/nvim-surround")
 
 	-- ===================================
 	-- search
