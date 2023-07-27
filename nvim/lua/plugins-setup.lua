@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("lukas-reineke/indent-blankline.nvim")
 	use("kylechui/nvim-surround")
+	use("rcarriga/nvim-notify")
 
 	-- ===================================
 	-- search

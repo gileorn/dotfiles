@@ -42,6 +42,9 @@ keymap.set("n", "<leader>m", ":Mason<CR>") -- toggle split window maximization
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
+-- nvim-notify
+keymap.set("n", "<leader>n", ":Notifications<CR>") -- toggle split window maximization
+
 -- nvim-tree
 keymap.set("n", "<leader>j", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" })
 keymap.set("n", "<leader>k", ":NvimTreeFindFile<CR>", { desc = "Reveal current file in Explorer" })
@@ -70,6 +73,7 @@ keymap.set("n", "<leader>fq", "<cmd>Telescope quickfix<cr>", { desc = "Quickfix"
 keymap.set("n", "<leader>fl", "<cmd>Telescope registers<cr>", { desc = "Registers" })
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Resume the Last Search" })
 keymap.set("n", "<leader>fp", "<cmd>Telescope pickers<cr>", { desc = "Pickers" })
+keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Notifications" })
 
 -- git blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
