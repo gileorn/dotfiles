@@ -144,6 +144,9 @@ lspconfig["tailwindcss"].setup({
 -- })
 
 lspconfig.eslint.setup({
+	settings = {
+		quiet = true,
+	},
 	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
