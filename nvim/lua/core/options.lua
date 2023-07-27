@@ -2,7 +2,7 @@ local opt = vim.opt
 
 -- line numbers
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 
 -- tabs
 opt.tabstop = 2
