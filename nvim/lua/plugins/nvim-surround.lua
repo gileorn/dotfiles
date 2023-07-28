@@ -1,8 +1,8 @@
 require("nvim-surround").setup({
 	-- see https://github.com/ggandor/leap.nvim/discussions/59
 	keymaps = {
-		insert = "<C-g>z",
-		insert_line = "gC-ggZ",
+		-- insert = "<C-g>z",
+		-- insert_line = "gC-ggZ",
 		normal = "gz",
 		normal_cur = "gZ",
 		-- normal_line = "gzgz",
