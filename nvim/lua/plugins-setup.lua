@@ -36,29 +36,31 @@ return require("packer").startup(function(use)
 	-- ===================================
 	use("lewis6991/gitsigns.nvim")
 	use("f-person/git-blame.nvim")
+	use("sindrets/diffview.nvim")
 
 	-- ===================================
 	-- navigation
 	-- ===================================
-	use("ThePrimeagen/harpoon")
 	use("ggandor/leap.nvim")
+	use("ThePrimeagen/harpoon")
 	use("nvim-tree/nvim-tree.lua")
-	use("christoomey/vim-tmux-navigator")
 	use("petertriho/nvim-scrollbar")
+	use("christoomey/vim-tmux-navigator")
 
 	-- ===================================
 	-- utility
 	-- ===================================
-	use("folke/which-key.nvim")
-	use("windwp/nvim-autopairs")
-	use("szw/vim-maximizer")
 	use("nvim-lualine/lualine.nvim")
+	use("folke/which-key.nvim")
+	use("rcarriga/nvim-notify")
+	use("szw/vim-maximizer")
+	use("windwp/nvim-autopairs")
+	use("kylechui/nvim-surround")
 	use("kyazdani42/nvim-web-devicons")
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("lukas-reineke/indent-blankline.nvim")
-	use("kylechui/nvim-surround")
-	use("rcarriga/nvim-notify")
+	use("numToStr/Comment.nvim")
 
 	-- ===================================
 	-- search
@@ -66,7 +68,6 @@ return require("packer").startup(function(use)
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 	use("kevinhwang91/nvim-hlslens")
-	use("numToStr/Comment.nvim")
 
 	-- ===================================
 	-- autocompletion & snippets

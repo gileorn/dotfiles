@@ -23,6 +23,13 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Create Horizontal Split" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make Splits Equal" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" })
 
+-- tabs
+keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab" })
+keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" })
+keymap.set("n", "<leader>tt", ":tabclose #<CR>", { desc = "Close Last Tab" })
+keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab" })
+keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab" })
+
 -- copy file path
 keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy Filename" })
 keymap.set("n", "<leader>cP", ':let @+ = expand("%:p")<cr>', { desc = "Copy Absolute Path" })
@@ -91,5 +98,10 @@ vim.keymap.set("n", "<leader>ca", "<cmd>CodeActionMenu<cr>", { desc = "Code Acti
 
 -- git blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
-keymap.set("n", "<leader>gf", ":GitBlameOpenFileURL<CR>", { desc = "Open File URL" })
-keymap.set("n", "<leader>gc", ":GitBlameOpenCommitURL<CR>", { desc = "Open Commit URL" })
+keymap.set("n", "<leader>ghf", ":GitBlameOpenFileURL<CR>", { desc = "Open File URL in Github" })
+keymap.set("n", "<leader>ghc", ":GitBlameOpenCommitURL<CR>", { desc = "Open Commit URL in Github" })
+
+-- diffview
+keymap.set("n", "<leader>gc", ":DiffviewOpen<CR>", { desc = "View All Changes" })
+keymap.set("n", "<leader>gf", ":DiffviewFileHistory %<CR>", { desc = "View File History" })
+keymap.set("n", "<leader>gr", ":DiffviewFileHistory<CR>", { desc = "View Full Repo History" })
