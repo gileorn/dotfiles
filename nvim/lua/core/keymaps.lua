@@ -1,6 +1,6 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
+
+vim.g.mapleader = " "
 
 ------------------------
 -- GENERAL KEYMAPS
@@ -25,8 +25,8 @@ keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" })
 
 -- copy file path
 keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy Filename" })
-keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File Path from Content Root" })
 keymap.set("n", "<leader>cP", ':let @+ = expand("%:p")<cr>', { desc = "Copy Absolute Path" })
+keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File Path from Content Root" })
 
 ------------------------
 -- PLUGIN KEYMAPS
@@ -62,7 +62,7 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep Str
 keymap.set(
 	"n",
 	"<leader>fd",
-	"<cmd>Telescope current_buffer_fuzzy_find fuzzy=false<cr>",
+	"<cmd>Telescope current_buffer_fuzzy_find<cr>",
 	{ desc = "Search String in Current Buffer" }
 )
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List Buffers" })
@@ -84,6 +84,9 @@ vim.keymap.set("n", "<leader>cd", "<cmd>Trouble lsp_definitions<cr>", { desc = "
 vim.keymap.set("n", "<leader>ct", "<cmd>Trouble lsp_type_definitions<cr>", { desc = "Show Type Definitions" })
 vim.keymap.set("n", "<leader>cl", "<cmd>Trouble loclist<cr>", { desc = "Show Loclist" })
 vim.keymap.set("n", "<leader>cq", "<cmd>Trouble quickfix<cr>", { desc = "Show Quickfix" })
+vim.keymap.set("n", "<leader>ce", "<cmd>Trouble document_diagnostics<cr>", { desc = "Document Diagnostics" })
+
+-- nvim-code-actions-menu
 vim.keymap.set("n", "<leader>ca", "<cmd>CodeActionMenu<cr>", { desc = "Code Actions" })
 
 -- git blame
