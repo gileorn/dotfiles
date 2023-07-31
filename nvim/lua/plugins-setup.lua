@@ -87,6 +87,8 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("jose-elias-alvarez/typescript.nvim")
 	use("folke/trouble.nvim")
+	use("weilbith/nvim-code-action-menu")
+	use("kosayoda/nvim-lightbulb")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
@@ -96,13 +98,6 @@ return require("packer").startup(function(use)
 			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
 			ts_update()
 		end,
-	})
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		requires = {
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
 	})
 
 	-- packer bootstrap

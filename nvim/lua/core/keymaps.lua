@@ -84,7 +84,7 @@ vim.keymap.set("n", "<leader>cd", "<cmd>Trouble lsp_definitions<cr>", { desc = "
 vim.keymap.set("n", "<leader>ct", "<cmd>Trouble lsp_type_definitions<cr>", { desc = "Show Type Definitions" })
 vim.keymap.set("n", "<leader>cl", "<cmd>Trouble loclist<cr>", { desc = "Show Loclist" })
 vim.keymap.set("n", "<leader>cq", "<cmd>Trouble quickfix<cr>", { desc = "Show Quickfix" })
-vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Actions" })
+vim.keymap.set("n", "<leader>ca", "<cmd>CodeActionMenu<cr>", { desc = "Code Actions" })
 
 -- git blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })

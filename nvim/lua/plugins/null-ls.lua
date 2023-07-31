@@ -10,7 +10,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
-		-- formatting.prettier,
 		formatting.prettier.with({
 			condition = function(utils)
 				return utils.root_has_file("node_modules/prettier/package.json")

@@ -5,11 +5,6 @@ if not status then
 end
 
 lualine.setup({
-	-- options = {
-	-- icons_enabled = false,
-	-- component_separators = "|",
-	-- section_separators = "",
-	-- },
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
@@ -19,6 +14,6 @@ lualine.setup({
 		lualine_z = { "location" },
 	},
 	options = {
-		disabled_filetypes = { statusline = { "packer", "NvimTree", "sagafinder" } },
+		disabled_filetypes = { statusline = { "packer", "NvimTree" } },
 	},
 })
