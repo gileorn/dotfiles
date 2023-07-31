@@ -12,6 +12,8 @@ end
 
 telescope.setup({
 	defaults = {
+		path_display = { "truncate" },
+		layout_strategy = "vertical",
 		wrap_results = true,
 		layout_config = {
 			vertical = { width = 0.999, height = 0.999 },

@@ -86,6 +86,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("jose-elias-alvarez/typescript.nvim")
+	use("folke/trouble.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {

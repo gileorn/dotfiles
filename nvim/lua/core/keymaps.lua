@@ -68,13 +68,23 @@ keymap.set(
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List Buffers" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "List Help Tags" })
 keymap.set("n", "<leader>fc", "<cmd>Telescope git_status<cr>", { desc = "List Git Changes" })
-keymap.set("n", "<leader>fr", "<cmd>Telescope commands<cr>", { desc = "Available Commands" })
+keymap.set("n", "<leader>f?", "<cmd>Telescope commands<cr>", { desc = "Available Commands" })
 keymap.set("n", "<leader>fa", "<cmd>Telescope colorscheme<cr>", { desc = "Colorschemes" })
 keymap.set("n", "<leader>fq", "<cmd>Telescope quickfix<cr>", { desc = "Quickfix" })
-keymap.set("n", "<leader>fl", "<cmd>Telescope registers<cr>", { desc = "Registers" })
+keymap.set("n", "<leader>f_", "<cmd>Telescope registers<cr>", { desc = "Registers" })
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Resume the Last Search" })
 keymap.set("n", "<leader>fp", "<cmd>Telescope pickers<cr>", { desc = "Pickers" })
 keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Notifications" })
+keymap.set("n", "<leader>fl", "<cmd>Telescope lsp_references<cr>", { desc = "LSP References" })
+
+-- trouble
+vim.keymap.set("n", "<leader>cc", "<cmd>TroubleToggle<cr>", { desc = "Toggle Trouble Plugin Visibility" })
+vim.keymap.set("n", "<leader>cr", "<cmd>Trouble lsp_references<cr>", { desc = "Show references" })
+vim.keymap.set("n", "<leader>cd", "<cmd>Trouble lsp_definitions<cr>", { desc = "Show Definitions" })
+vim.keymap.set("n", "<leader>ct", "<cmd>Trouble lsp_type_definitions<cr>", { desc = "Show Type Definitions" })
+vim.keymap.set("n", "<leader>cl", "<cmd>Trouble loclist<cr>", { desc = "Show Loclist" })
+vim.keymap.set("n", "<leader>cq", "<cmd>Trouble quickfix<cr>", { desc = "Show Quickfix" })
+vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Actions" })
 
 -- git blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
