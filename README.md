@@ -2,12 +2,29 @@
 
 Personalized development environment (PDE), term that was brought up by TJ [DeVries](https://github.com/tjdevries) in this [video essay on why whould someone use Neovim](https://www.youtube.com/watch?v=QMVIJhC9Veg).
 
-The core of my PDE is [neovim](https://github.com/neovim/neovim), [tmux](https://github.com/tmux/tmux) and zsh.
-
 ![ui overview](./img/overview.png)
+
+## Overview, UI and features
+
+<details>
+  <summary>Lazygit as a git wrapper</summary>
+  <div>
+    <img src="/img/lazy-git.png"></img>
+  </div>
+</details>
+
+<details>
+  <summary>Telescope neovim plugin to fuzzy-search basically anything</summary>
+  <div>
+    <img src="/img/telescope.png"></img>
+  </div>
+</details>
+
 
 ## The real heroes of this setup
 
+- [neovim](https://github.com/neovim/neovim)
+- [tmux](https://github.com/tmux/tmux)
 - [leap](https://github.com/ggandor/leap.nvim) - the thing that makes you forget about the mouse and get wherever you want in just 4 keystrokes
 - [harpoon](https://github.com/ThePrimeagen/harpoon) - the only sensible way to use bookmarks and the reason I don't want to use tabs anymore
 - [which-key](https://github.com/folke/which-key.nvim) - keymaps that make sense and which you don't need to always remember
