@@ -13,9 +13,18 @@ if not typescript_setup then
 	return
 end
 
+local lspformat_setup, lspformat = pcall(require, "lsp-format")
+if not lspformat_setup then
+	return
+end
+
+lspformat.setup()
+
 local keymap = vim.keymap
 
 local on_attach = function(client)
+	lspformat.on_attach(client)
+
 	if client.name == "tsserver" then
 		keymap.set(
 			"n",
@@ -101,3 +110,5 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+lspconfig["gopls"].setup({ on_attach = on_attach, capabilities = capabilities })

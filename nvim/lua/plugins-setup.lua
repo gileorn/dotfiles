@@ -15,7 +15,7 @@ local packer_bootstrap = ensure_packer()
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
@@ -87,10 +87,11 @@ return require("packer").startup(function(use)
 	use("jayp0521/mason-null-ls.nvim")
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use("jose-elias-alvarez/typescript.nvim")
 	use("folke/trouble.nvim")
 	use("weilbith/nvim-code-action-menu")
 	use("kosayoda/nvim-lightbulb")
+	use("lukas-reineke/lsp-format.nvim")
+	use("jose-elias-alvarez/typescript.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {

@@ -1,41 +1,43 @@
 local setup, null_ls = pcall(require, "null-ls")
+
 if not setup then
-	return
+  return
 end
 
 local formatting = null_ls.builtins.formatting
 
--- -- to setup format on save
+-- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
-	sources = {
-		formatting.stylua,
-		formatting.prettier.with({
-			-- condition = function(utils)
-			-- 	return utils.root_has_file("node_modules/prettier/package.json")
-			-- 	-- return utils.root_has_file_matches("prettier") -- refine the regex if needed again
-			-- end,
-		}),
-	},
+  sources = {
+    formatting.stylua,
+    formatting.prettierd.with({
+      generator_opts = {
+        command = "prettierd",
+        args = { "$FILENAME" },
+        to_stdin = true,
+        condition = function(utils)
+          return utils.root_has_file("package.json")
+              or utils.root_has_file(".prettierrc")
+              or utils.root_has_file(".prettierrc.json")
+              or utils.root_has_file(".prettierrc.js")
+        end,
+      },
+    }),
+  },
 
-	-- configure format on save with prettier
-	on_attach = function(current_client, bufnr)
-		if current_client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({
-						filter = function(client)
-							-- only use null-ls for formatting instead of lsp server
-							return client.name == "null-ls"
-						end,
-						bufnr = bufnr,
-					})
-				end,
-			})
-		end
-	end,
+  -- configure format on save
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr })
+        end,
+      })
+    end
+  end,
 })
