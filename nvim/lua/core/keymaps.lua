@@ -105,3 +105,6 @@ keymap.set("n", "<leader>ghc", ":GitBlameOpenCommitURL<CR>", { desc = "Open Comm
 keymap.set("n", "<leader>gc", ":DiffviewOpen<CR>", { desc = "View All Changes" })
 keymap.set("n", "<leader>gf", ":DiffviewFileHistory %<CR>", { desc = "View File History" })
 keymap.set("n", "<leader>gr", ":DiffviewFileHistory<CR>", { desc = "View Full Repo History" })
+
+-- spectre
+keymap.set("n", "<leader>r", ":Spectre<CR>", { desc = "Global Find & Replace" })

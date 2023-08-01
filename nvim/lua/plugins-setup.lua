@@ -67,6 +67,7 @@ return require("packer").startup(function(use)
 	-- ===================================
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+	use("nvim-pack/nvim-spectre")
 	use("kevinhwang91/nvim-hlslens")
 
 	-- ===================================
