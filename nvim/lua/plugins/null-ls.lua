@@ -10,13 +10,13 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
-		formatting.prettier.with({
-			condition = function(utils)
-				return utils.root_has_file("node_modules/prettier/package.json")
-				-- return utils.root_has_file_matches("prettier") -- refine the regex if needed again
-			end,
-		}),
 		formatting.stylua,
+		formatting.prettier.with({
+			-- condition = function(utils)
+			-- 	return utils.root_has_file("node_modules/prettier/package.json")
+			-- 	-- return utils.root_has_file_matches("prettier") -- refine the regex if needed again
+			-- end,
+		}),
 	},
 
 	-- configure format on save with prettier

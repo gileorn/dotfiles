@@ -1,28 +1,24 @@
 ## Core
 
-- Session is the main entity
-- Session may have many windows
-- Window may have many panes
-
-<!-- ## Search -->
-<!---->
-<!-- `/` - search forward -->
-<!-- `?` - search backward -->
-<!-- `n` - next keyword occurance -->
-<!-- `N` - previous keyword occurance -->
+`<prefix>:` - enter command mode
+`<prefix>d` - detach from session
+`<prefix>R` - source tmux.conf
+`<prefix>I` - install TPM packages
 
 ## Sessions
 
 `tmux new -s session-name` - create new named session
-`tmux kill-session session-name` - kill session
+`tmux kill-session session-name` - close session
 `tmux list-sessions` or `<prefix>s` - list all sessions
 `tmux attach` - attach to last active session
+`<prefix>$` - rename session
 
 ## Windows
 
 `<prefix>c` - create a new window
-`<prefix>&` - kill window
+`<prefix>&` - close window
 `<prefix>w` - show all windows in all sessions
+`<prefix>,` - rename current window
 `swap-window -s 2 -t 1` - swap windows, where (s) is source (t) is target
 
 ## Panes

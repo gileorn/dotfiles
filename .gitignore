@@ -3,10 +3,13 @@
 
 # Except specified files and directories
 !.gitignore
+!README.md
 !/nvim
 !/nvim/**
 !/tmux
 !/tmux/**
+!/img
+!/img/**
 
 # And ignore these additionally
 /nvim/plugin

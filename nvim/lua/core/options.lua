@@ -44,3 +44,6 @@ vim.o.mouse = "a"
 -- Which key
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+
+-- git blame
+vim.g.gitblame_enabled = 0

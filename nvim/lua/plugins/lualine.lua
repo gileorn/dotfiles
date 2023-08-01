@@ -14,6 +14,6 @@ lualine.setup({
 		lualine_z = { "location" },
 	},
 	options = {
-		disabled_filetypes = { statusline = { "packer", "NvimTree" } },
+		disabled_filetypes = { statusline = { "packer", "NvimTree", "Diffview", "DiffviewFiles" } },
 	},
 })

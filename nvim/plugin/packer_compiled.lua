@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["git-blame.nvim"] = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
@@ -118,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -164,20 +164,45 @@ _G.packer_plugins = {
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-code-action-menu"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
+  },
   ["nvim-hlslens"] = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
     url = "https://github.com/kevinhwang91/nvim-hlslens"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-scrollbar"] = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
     url = "https://github.com/petertriho/nvim-scrollbar"
+  },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/nvim-pack/nvim-spectre"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -231,10 +256,20 @@ _G.packer_plugins = {
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  ["vim-maximizer"] = {
+    loaded = true,
+    path = "/Users/iakovlev/.local/share/nvim/site/pack/packer/start/vim-maximizer",
+    url = "https://github.com/szw/vim-maximizer"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,
