@@ -4,14 +4,16 @@ Personalized development environment (PDE), term that was brought up by TJ [DeVr
 
 The core of my PDE is [neovim](https://github.com/neovim/neovim), [tmux](https://github.com/tmux/tmux) and zsh.
 
+![ui overview](./img/overview.png)
+
 ## The real heroes of this setup
 
-- [leap](https://github.com/ggandor/leap.nvim) - the thing that makes you forget about the mouse and get wherever you want in just 3 keystroke
+- [leap](https://github.com/ggandor/leap.nvim) - the thing that makes you forget about the mouse and get wherever you want in just 4 keystrokes
 - [harpoon](https://github.com/ThePrimeagen/harpoon) - the only sensible way to use bookmarks and the reason I don't want to use tabs anymore
-- [which-key](https://github.com/folke/which-key.nvim) -
-- [telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [trouble](https://github.com/folke/trouble.nvim)
-- [lazygit](https://github.com/jesseduffield/lazygit/tree/master)
+- [which-key](https://github.com/folke/which-key.nvim) - keymaps that make sense and which you don't need to always remember
+- [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy search basically anything you can even imagine
+- [trouble](https://github.com/folke/trouble.nvim) - jump across the codebase with smart definitions and references
+- [lazygit](https://github.com/jesseduffield/lazygit/tree/master) - git wrapper that makes sense
 - and of course the power of Neovim
 
 ## Plugins list
@@ -57,10 +59,10 @@ The core of my PDE is [neovim](https://github.com/neovim/neovim), [tmux](https:/
 
 **LSP**
 
-- [mason](https://github.com/williamboman/mason.nvim)
+- [trouble](https://github.com/folke/trouble.nvim)
+- [mason](https://github.com/williamboman/mason.nvim) - package manager for LSPs and linters
+- [lightbulb](https://github.com/kosayoda/nvim-lightbulb) - code actions indicator
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [trouble](https://github.com/folke/trouble.nvim)
 - [code-action-menu](https://github.com/weilbith/nvim-code-action-menu)
-- [lightbulb](https://github.com/kosayoda/nvim-lightbulb)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
