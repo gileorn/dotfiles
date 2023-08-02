@@ -108,3 +108,7 @@ keymap.set("n", "<leader>gr", ":DiffviewFileHistory<CR>", { desc = "View Full Re
 
 -- spectre
 keymap.set("n", "<leader>r", ":Spectre<CR>", { desc = "Global Find & Replace" })
+
+-- hover
+vim.keymap.set("n", "<leader>ch", require("hover").hover, { desc = "Show Hover Documentation" })
+vim.keymap.set("n", "<leader>cH", require("hover").hover_select, { desc = "Show Hover Documentation with Select" })

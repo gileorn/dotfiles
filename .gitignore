@@ -13,4 +13,7 @@
 
 # And ignore these additionally
 /nvim/plugin
+/nvim/plugin/**
 /tmux/plugins
+/tmux/plugins/**
+nvim/plugin

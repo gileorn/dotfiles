@@ -27,3 +27,4 @@ require("plugins.nvim-notify")
 -- require("plugins.nvim-lightbulb") - temporary disable due to the bug
 require("plugins.trouble")
 require("plugins.diffview")
+require("plugins.hover")
