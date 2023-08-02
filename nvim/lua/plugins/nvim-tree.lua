@@ -8,11 +8,20 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
 nvimtree.setup({
 	view = {
 		width = 45,
+		float = {
+			enable = true,
+			open_win_config = {
+				relative = "editor",
+				border = "rounded",
+				width = 50,
+				height = 35,
+				row = 1,
+				col = 1,
+			},
+		},
 	},
 	-- change folder arrow icons
 	renderer = {
