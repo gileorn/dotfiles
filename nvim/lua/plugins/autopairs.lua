@@ -5,6 +5,7 @@ end
 
 autopairs.setup({
 	check_ts = true, -- enable treesitter
+	ignored_next_char = "[%w%.]",
 	ts_config = {
 		lua = { "string" }, -- don't add pairs in lua string treesitter nodes
 		javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
@@ -22,4 +23,4 @@ if not cmp_setup then
 end
 
 -- make autopairs and completion work together
--- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
