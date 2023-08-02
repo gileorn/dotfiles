@@ -4,9 +4,7 @@ if not status then
 	return
 end
 
--- configure treesitter
 treesitter.setup({
-	-- enable syntax highlighting
 	highlight = {
 		enable = true,
 	},
@@ -23,6 +21,7 @@ treesitter.setup({
 		"yaml",
 		"html",
 		"css",
+		"go",
 		"markdown",
 		"markdown_inline",
 		"svelte",
