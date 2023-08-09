@@ -10,9 +10,9 @@ vim.g.loaded_netrwPlugin = 1
 
 nvimtree.setup({
 	view = {
-		width = 45,
+		width = 60,
 		float = {
-			enable = true,
+			enable = false,
 			open_win_config = {
 				relative = "editor",
 				border = "rounded",
@@ -33,5 +33,8 @@ nvimtree.setup({
 				},
 			},
 		},
+	},
+	git = {
+		ignore = false,
 	},
 })
