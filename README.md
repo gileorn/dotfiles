@@ -35,6 +35,13 @@ Personalized development environment (PDE), term that was brought up by [TJ DeVr
 </details>
 
 <details>
+  <summary>Which Key neovim plugin for creating keymaps that stick and make sense</summary>
+  <div>
+    <img src="/img/which-key.png"></img>
+  </div>
+</details>
+
+<details>
   <summary>Mason neovim plugin for LSP package management</summary>
   <div>
     <img src="/img/mason.png"></img>
@@ -47,7 +54,6 @@ Personalized development environment (PDE), term that was brought up by [TJ DeVr
     <img src="/img/lazy-git.png"></img>
   </div>
 </details>
-
 
 ## The real heroes of this setup
 
@@ -100,12 +106,12 @@ Personalized development environment (PDE), term that was brought up by [TJ DeVr
 - [mason](https://github.com/williamboman/mason.nvim) - package manager for LSPs and linters
 - [lightbulb](https://github.com/kosayoda/nvim-lightbulb) - code actions indicator
 - [code-action-menu](https://github.com/weilbith/nvim-code-action-menu) - smart contextual code action menu
-- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- [lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) - autoformatting on save
+- [lspconfig](https://github.com/neovim/nvim-lspconfig) - configuring LSP servers
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - enhanced code highlight and analysis for other tools
 
 **Autocompletion & snippets**
 
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [cmp-path](https://github.com/hrsh7th/cmp-path)
-- [luasnip](https://github.com/L3MON4D3/LuaSnip)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - completion engine
+- [cmp-path](https://github.com/hrsh7th/cmp-path) - autocompletion source for files
+- [luasnip](https://github.com/L3MON4D3/LuaSnip) - snippet engine with integration to nvim-cmp
