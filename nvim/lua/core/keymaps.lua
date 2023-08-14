@@ -1,3 +1,8 @@
+local luasnip_status, luasnip = pcall(require, "luasnip")
+if not luasnip_status then
+	return
+end
+
 local keymap = vim.keymap
 
 vim.g.mapleader = " "
@@ -112,3 +117,19 @@ keymap.set("n", "<leader>r", ":Spectre<CR>", { desc = "Global Find & Replace" })
 -- hover
 vim.keymap.set("n", "<leader>ch", require("hover").hover, { desc = "Show Hover Documentation" })
 vim.keymap.set("n", "<leader>cH", require("hover").hover_select, { desc = "Show Hover Documentation with Select" })
+
+-- luasnip
+vim.keymap.set({ "i" }, "<C-K>", function()
+	luasnip.expand()
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-n>", function()
+	luasnip.jump(1)
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-b>", function()
+	luasnip.jump(-1)
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+	if luasnip.choice_active() then
+		luasnip.change_choice(1)
+	end
+end, { silent = true })
