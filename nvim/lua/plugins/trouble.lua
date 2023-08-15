@@ -3,4 +3,8 @@ require("trouble").setup({
 	position = "bottom",
 	auto_close = true,
 	height = 20,
+	action_keys = {
+		previous = "l",
+		next = "k",
+	},
 })

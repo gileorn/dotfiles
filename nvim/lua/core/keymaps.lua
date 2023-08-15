@@ -6,6 +6,7 @@ end
 local keymap = vim.keymap
 
 vim.g.mapleader = " "
+vim.g.tmux_navigator_no_mappings = 1 -- disable default tmux navigator keymaps
 
 ------------------------
 -- GENERAL KEYMAPS
@@ -13,7 +14,11 @@ vim.g.mapleader = " "
 keymap.set("n", "<leader>%", ":luafile %<CR>", { desc = "Reload Lua Config" })
 keymap.set("n", "x", '"_x') -- do not copy to register the symbol that are deleted with x
 keymap.set("n", "c", '"_c') -- do not copy to register the target of change command
-keymap.set("n", "d", '"_d') -- do not copy to register the target of delete command
+-- remap hjkl to jkl; for basic movement
+keymap.set({ "n", "v" }, "j", "h", { noremap = true })
+keymap.set({ "n", "v" }, "k", "j", { noremap = true })
+keymap.set({ "n", "v" }, "l", "k", { noremap = true })
+keymap.set({ "n", "v" }, ";", "l", { noremap = true })
 
 -- change lines order
 -- these symbols are Alt+j and Alt+k on Mac
@@ -51,6 +56,17 @@ keymap.set("n", "<leader>pi", ":PackerInstall<CR>", { desc = "Install All Plugin
 
 -- mason
 keymap.set("n", "<leader>m", ":Mason<CR>") -- toggle split window maximization
+keymap.set("n", "<C-;>", ":Mason<CR>") -- toggle split window maximization
+
+-- vim-tmux-navigator
+keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateDown<cr>", { noremap = true })
+keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateUp<cr>", { noremap = true })
+keymap.set("n", "<C-;>", ":<C-U>TmuxNavigateRight<cr>", { noremap = true })
+keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
+-- keymap.set("n", "<c-j>", ":<C-U>TmuxNavigateDown<cr>", { noremap = true })
+-- keymap.set("n", "<c-k>", ":<C-U>TmuxNavigateUp<cr>", { noremap = true })
+-- keymap.set("n", "<c-l>", ":<C-U>TmuxNavigateRight<cr>", { noremap = true })
+-- keymap.set("n", "<c-h>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
@@ -59,8 +75,8 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 keymap.set("n", "<leader>n", ":Notifications<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>j", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" })
-keymap.set("n", "<leader>k", ":NvimTreeFindFile<CR>", { desc = "Reveal current file in Explorer" })
+keymap.set("n", "<leader>k", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" })
+keymap.set("n", "<leader>l", ":NvimTreeFindFile<CR>", { desc = "Reveal current file in Explorer" })
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
