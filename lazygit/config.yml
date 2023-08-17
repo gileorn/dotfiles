@@ -1,0 +1,4 @@
+keybinding:
+  universal:
+    prevItem-alt: "l" # go one line up
+    nextItem-alt: "k" # go one line down
