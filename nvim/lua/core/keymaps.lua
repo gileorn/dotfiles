@@ -1,6 +1,6 @@
 local luasnip_status, luasnip = pcall(require, "luasnip")
 if not luasnip_status then
-	return
+  return
 end
 
 local keymap = vim.keymap
@@ -21,11 +21,11 @@ keymap.set({ "n", "v" }, "l", "k", { noremap = true })
 keymap.set({ "n", "v" }, ";", "l", { noremap = true })
 
 -- change lines order
--- these symbols are Alt+j and Alt+k on Mac
-keymap.set("n", "∆", ":m .+1<CR>")
-keymap.set("n", "˚", ":m .-2<CR>")
-keymap.set("v", "∆", ":m '>+1<CR>gv=gv", { noremap = true })
-keymap.set("v", "˚", ":m '<-2<CR>gv=gv", { noremap = true })
+-- these symbols are Alt+k and Alt+l on Mac
+keymap.set("n", "˚", ":m .+1<CR>")
+keymap.set("n", "¬", ":m .-2<CR>")
+keymap.set("v", "˚", ":m '>+1<CR>gv=gv", { noremap = true })
+keymap.set("v", "¬", ":m '<-2<CR>gv=gv", { noremap = true })
 
 -- splits management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Create Vertical Split" })
@@ -56,17 +56,13 @@ keymap.set("n", "<leader>pi", ":PackerInstall<CR>", { desc = "Install All Plugin
 
 -- mason
 keymap.set("n", "<leader>m", ":Mason<CR>") -- toggle split window maximization
-keymap.set("n", "<C-;>", ":Mason<CR>") -- toggle split window maximization
+keymap.set("n", "<C-;>", ":Mason<CR>")     -- toggle split window maximization
 
 -- vim-tmux-navigator
 keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateDown<cr>", { noremap = true })
 keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateUp<cr>", { noremap = true })
 keymap.set("n", "<C-;>", ":<C-U>TmuxNavigateRight<cr>", { noremap = true })
 keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
--- keymap.set("n", "<c-j>", ":<C-U>TmuxNavigateDown<cr>", { noremap = true })
--- keymap.set("n", "<c-k>", ":<C-U>TmuxNavigateUp<cr>", { noremap = true })
--- keymap.set("n", "<c-l>", ":<C-U>TmuxNavigateRight<cr>", { noremap = true })
--- keymap.set("n", "<c-h>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
@@ -81,17 +77,17 @@ keymap.set("n", "<leader>l", ":NvimTreeFindFile<CR>", { desc = "Reveal current f
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 keymap.set(
-	"n",
-	"<leader>fF",
-	"<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
-	{ desc = "Find Files including hidden" }
+  "n",
+  "<leader>fF",
+  "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
+  { desc = "Find Files including hidden" }
 )
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
 keymap.set(
-	"n",
-	"<leader>fd",
-	"<cmd>Telescope current_buffer_fuzzy_find<cr>",
-	{ desc = "Search String in Current Buffer" }
+  "n",
+  "<leader>fd",
+  "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+  { desc = "Search String in Current Buffer" }
 )
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List Buffers" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "List Help Tags" })
@@ -136,16 +132,16 @@ vim.keymap.set("n", "<leader>cH", require("hover").hover_select, { desc = "Show 
 
 -- luasnip
 vim.keymap.set({ "i" }, "<C-K>", function()
-	luasnip.expand()
+  luasnip.expand()
 end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<C-n>", function()
-	luasnip.jump(1)
+  luasnip.jump(1)
 end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<C-b>", function()
-	luasnip.jump(-1)
+  luasnip.jump(-1)
 end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<C-E>", function()
-	if luasnip.choice_active() then
-		luasnip.change_choice(1)
-	end
+  if luasnip.choice_active() then
+    luasnip.change_choice(1)
+  end
 end, { silent = true })

@@ -1,4 +1,4 @@
-# Ignore everything
+# Ignore everything since the config folder is full of stuff
 *
 
 # Except specified files and directories
@@ -10,10 +10,12 @@
 !/tmux/**
 !/img
 !/img/**
+!/lazygit
+!/lazygit/**
 
 # And ignore these additionally
 /nvim/plugin
 /nvim/plugin/**
 /tmux/plugins
 /tmux/plugins/**
-nvim/plugin
+/lazygit/state.yml
