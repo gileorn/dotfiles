@@ -1,19 +1,19 @@
 -- import lualine plugin safely
 local status, lualine = pcall(require, "lualine")
 if not status then
-	return
+  return
 end
 
 lualine.setup({
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { { "filename", path = 1 } },
-		lualine_x = { "filetype" },
-		lualine_y = {},
-		lualine_z = { "location" },
-	},
-	options = {
-		disabled_filetypes = { statusline = { "packer", "NvimTree", "Diffview", "DiffviewFiles" } },
-	},
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "diagnostics" },
+    lualine_c = { { "filename", path = 1 } },
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = { "location" },
+  },
+  options = {
+    disabled_filetypes = { statusline = { "packer", "NvimTree", "Diffview", "DiffviewFiles" } },
+  },
 })
