@@ -51,7 +51,7 @@ Personalized development environment (PDE), a term that was brought up by [TJ De
 <details>
   <summary>Lazygit CLI tool as a git wrapper</summary>
   <div>
-    <img src="/img/lazy-git.png"></img>
+    <img src="/img/lazygit.png"></img>
   </div>
 </details>
 
