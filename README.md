@@ -1,48 +1,48 @@
 # Neovim Personalized Development Environment
 
-Personalized development environment (PDE), term that was brought up by [TJ DeVries](https://github.com/tjdevries) in this [video essay on why whould someone use Neovim](https://www.youtube.com/watch?v=QMVIJhC9Veg).
+Personalized development environment (PDE), a term that was brought up by [TJ DeVries](https://github.com/tjdevries) in this [video essay on why would someone use Neovim](https://www.youtube.com/watch?v=QMVIJhC9Veg).
 
 ![ui overview](./img/overview.png)
 
 ## Overview, UI and features
 
 <details>
-  <summary>Trouble neovim plugin for smart code navigation through references and definitions</summary>
+  <summary>Trouble Neovim plugin for smart code navigation through references and definitions</summary>
   <div>
     <img src="/img/trouble.png"></img>
   </div>
 </details>
 
 <details>
-  <summary>Diffview neovim plugin to keep track of all changes</summary>
+  <summary>Diffview Neovim plugin to keep track of all changes</summary>
   <div>
     <img src="/img/diffview.png"></img>
   </div>
 </details>
 
 <details>
-  <summary>Telescope neovim plugin to fuzzy-search basically anything</summary>
+  <summary>Telescope Neovim plugin to fuzzy-search basically anything</summary>
   <div>
     <img src="/img/telescope.png"></img>
   </div>
 </details>
 
 <details>
-  <summary>Code Actions neovim plugin for contextual code actions from LSP</summary>
+  <summary>Code Actions Neovim plugin for contextual code actions from LSP</summary>
   <div>
     <img src="/img/code-actions.png"></img>
   </div>
 </details>
 
 <details>
-  <summary>Which Key neovim plugin for creating keymaps that stick and make sense</summary>
+  <summary>Which Key Neovim plugin for creating keymaps that stick and make sense</summary>
   <div>
     <img src="/img/which-key.png"></img>
   </div>
 </details>
 
 <details>
-  <summary>Mason neovim plugin for LSP package management</summary>
+  <summary>Mason Neovim plugin for LSP package management</summary>
   <div>
     <img src="/img/mason.png"></img>
   </div>
@@ -64,6 +64,11 @@ Personalized development environment (PDE), term that was brought up by [TJ DeVr
 - [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy search basically anything you can even imagine
 - [trouble](https://github.com/folke/trouble.nvim) - jump across the codebase with smart definitions and references
 - [lazygit](https://github.com/jesseduffield/lazygit/tree/master) - git wrapper that makes sense
+
+## Prerequisites
+
+- `tmux`, `neovim`, `lazygit` and `git` should be installed on your system
+- Enable `CSI u` in iTerm or alternative option in your terminal of choice. This is required for keymaps like <C-;> to work.
 
 ## Plugins list
 
@@ -91,7 +96,7 @@ Personalized development environment (PDE), term that was brought up by [TJ DeVr
 - [nvim-surround](https://github.com/kylechui/nvim-surround/tree/main) - to surround text with special characters
 - [toggleterm](https://github.com/akinsho/toggleterm.nvim) - to use CLI tools such as lazygit in a floating terminal in neovim
 - [comment](https://github.com/numToStr/Comment.nvim) - smart commenting functionality for different languages
-- [packer](https://github.com/wbthomason/packer.nvim) - the package manaer for neovim
+- [packer](https://github.com/wbthomason/packer.nvim) - package manager for neovim
 - [catpuccin](https://github.com/catppuccin/nvim) - colorscheme of choice
 
 **Search**
