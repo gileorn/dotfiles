@@ -14,11 +14,16 @@ vim.g.tmux_navigator_no_mappings = 1 -- disable default tmux navigator keymaps
 keymap.set("n", "<leader>%", ":luafile %<CR>", { desc = "Reload Lua Config" })
 keymap.set("n", "x", '"_x') -- do not copy to register the symbol that are deleted with x
 keymap.set("n", "c", '"_c') -- do not copy to register the target of change command
+
 -- remap hjkl to jkl; for basic movement
 keymap.set({ "n", "v" }, "j", "h", { noremap = true })
 keymap.set({ "n", "v" }, "k", "j", { noremap = true })
 keymap.set({ "n", "v" }, "l", "k", { noremap = true })
 keymap.set({ "n", "v" }, ";", "l", { noremap = true })
+keymap.set({ "n", "v" }, "gj", "gh", { noremap = true })
+keymap.set({ "n", "v" }, "gk", "gj", { noremap = true })
+keymap.set({ "n", "v" }, "gl", "gk", { noremap = true })
+keymap.set({ "n", "v" }, "g;", "gl", { noremap = true })
 
 -- change lines order
 -- these symbols are Alt+k and Alt+l on Mac
