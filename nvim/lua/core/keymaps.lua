@@ -13,7 +13,7 @@ vim.g.tmux_navigator_no_mappings = 1 -- disable default tmux navigator keymaps
 ------------------------
 keymap.set("n", "<leader>%", ":luafile %<CR>", { desc = "Reload Lua Config" })
 keymap.set("n", "x", '"_x') -- do not copy to register the symbol that are deleted with x
-keymap.set("n", "c", '"_c') -- do not copy to register the target of change command
+keymap.set({ "n", "v" }, "c", '"_c') -- do not copy to register the target of change command
 
 -- remap hjkl to jkl; for basic movement
 keymap.set({ "n", "v" }, "j", "h", { noremap = true })
