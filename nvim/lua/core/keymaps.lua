@@ -24,6 +24,12 @@ keymap.set({ "n", "v" }, "gj", "gh", { noremap = true })
 keymap.set({ "n", "v" }, "gk", "gj", { noremap = true })
 keymap.set({ "n", "v" }, "gl", "gk", { noremap = true })
 keymap.set({ "n", "v" }, "g;", "gl", { noremap = true })
+keymap.set("n", "z;", "zl", { noremap = true })
+keymap.set("n", "zj", "zh", { noremap = true })
+
+-- text wrap
+keymap.set("n", "<leader>we", ":set wrap<CR>", { noremap = true, desc = "Enable Text Wrap" })
+keymap.set("n", "<leader>wd", ":set nowrap<CR>", { noremap = true, desc = "Disable Text Wrap" })
 
 -- change lines order
 -- these symbols are Alt+k and Alt+l on Mac
