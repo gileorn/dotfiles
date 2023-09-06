@@ -28,7 +28,7 @@ local on_attach = function(client)
 	if client.name == "tsserver" then
 		keymap.set(
 			"n",
-			"<leader>rf",
+			"<leader>cR",
 			":TypescriptRenameFile<CR>",
 			{ noremap = true, silent = true, desc = "TS: Rename File" }
 		)

@@ -26,6 +26,8 @@ keymap.set({ "n", "v" }, "gl", "gk", { noremap = true })
 keymap.set({ "n", "v" }, "g;", "gl", { noremap = true })
 keymap.set("n", "z;", "zl", { noremap = true })
 keymap.set("n", "zj", "zh", { noremap = true })
+keymap.set("n", "z:", "zL", { noremap = true })
+keymap.set("n", "zJ", "zH", { noremap = true })
 
 -- text wrap
 keymap.set("n", "<leader>we", ":set wrap<CR>", { noremap = true, desc = "Enable Text Wrap" })
@@ -56,6 +58,9 @@ keymap.set("n", "<leader>cf", ':let @+ = expand("%:t")<cr>', { desc = "Copy File
 keymap.set("n", "<leader>cP", ':let @+ = expand("%:p")<cr>', { desc = "Copy Absolute Path" })
 keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File Path from Content Root" })
 
+-- rename
+keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+
 ------------------------
 -- PLUGIN KEYMAPS
 ------------------------
@@ -75,10 +80,10 @@ keymap.set("n", "<C-;>", ":<C-U>TmuxNavigateRight<cr>", { noremap = true })
 keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Split Maximization" })
 
 -- nvim-notify
-keymap.set("n", "<leader>n", ":Notifications<CR>")
+keymap.set("n", "<leader>n", ":Notifications<CR>", { noremap = true, desc = "See Notifications List" })
 
 -- nvim-tree
 keymap.set("n", "<leader>k", ":NvimTreeToggle<CR>", { desc = "Toggle Explorer" })
