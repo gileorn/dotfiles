@@ -8,11 +8,6 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-	return
-end
-
 local lspformat_setup, lspformat = pcall(require, "lsp-format")
 if not lspformat_setup then
 	return

@@ -1,5 +1,12 @@
+local lspformat_setup, lspformat = pcall(require, "lsp-format")
+if not lspformat_setup then
+	return
+end
+
 require("typescript-tools").setup({
 	on_attach = function(client, bufnr)
+		lspformat.on_attach(client)
+
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
 
@@ -18,7 +25,7 @@ require("typescript-tools").setup({
 		)
 		vim.keymap.set(
 			"n",
-			"<localleader>o",
+			"<leader>cO",
 			"<Cmd>TSToolsOrganizeImports<CR>",
 			{ buffer = bufnr, desc = "Organize imports" }
 		)

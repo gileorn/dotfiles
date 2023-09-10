@@ -95,7 +95,6 @@ return require("packer").startup(function(use)
 	use("folke/trouble.nvim")
 	use("lewis6991/hover.nvim")
 	use("weilbith/nvim-code-action-menu")
-	use("kosayoda/nvim-lightbulb")
 	use("lukas-reineke/lsp-format.nvim")
 	use({
 		"pmizio/typescript-tools.nvim",
