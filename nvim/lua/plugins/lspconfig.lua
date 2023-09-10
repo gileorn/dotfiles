@@ -24,27 +24,6 @@ local keymap = vim.keymap
 
 local on_attach = function(client)
 	lspformat.on_attach(client)
-
-	if client.name == "tsserver" then
-		keymap.set(
-			"n",
-			"<leader>cR",
-			":TypescriptRenameFile<CR>",
-			{ noremap = true, silent = true, desc = "TS: Rename File" }
-		)
-		keymap.set(
-			"n",
-			"<leader>co",
-			":TypescriptOrganizeImports<CR>",
-			{ noremap = true, silent = true, desc = "TS: Organize Imports" }
-		)
-		keymap.set(
-			"n",
-			"<leader>cu",
-			":TypescriptRemoveUnused<CR>",
-			{ noremap = true, silent = true, desc = "TS: Remove Unused" }
-		)
-	end
 end
 
 -- enable autocompletion (assign to every lsp server config)
@@ -53,13 +32,6 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 lspconfig["html"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-})
-
-typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	},
 })
 
 lspconfig["cssls"].setup({
@@ -71,13 +43,6 @@ lspconfig["tailwindcss"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-
--- disabling for now due to suggest trigger to anything in jsx
--- lspconfig["emmet_ls"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
--- })
 
 lspconfig.eslint.setup({
 	settings = {

@@ -24,6 +24,7 @@ require("plugins.comment")
 require("plugins.nvim-scrollbar")
 require("plugins.nvim-surround")
 require("plugins.nvim-notify")
+require("plugins.typescript-tools")
 -- require("plugins.nvim-lightbulb") - temporary disable due to the bug
 require("plugins.trouble")
 require("plugins.diffview")

@@ -97,7 +97,10 @@ return require("packer").startup(function(use)
 	use("weilbith/nvim-code-action-menu")
 	use("kosayoda/nvim-lightbulb")
 	use("lukas-reineke/lsp-format.nvim")
-	use("jose-elias-alvarez/typescript.nvim")
+	use({
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
