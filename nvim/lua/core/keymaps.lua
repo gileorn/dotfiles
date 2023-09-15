@@ -82,6 +82,9 @@ keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateLeft<cr>", { noremap = true })
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Split Maximization" })
 
+-- treesj
+keymap.set("n", "<leader>e", ":TSJToggle<CR>", { desc = "Expand/Collapse code block" })
+
 -- nvim-notify
 keymap.set("n", "<leader>n", ":Notifications<CR>", { noremap = true, desc = "See Notifications List" })
 
@@ -91,7 +94,8 @@ keymap.set("n", "<leader>l", ":NvimTreeFindFile<CR>", { desc = "Reveal current f
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string use_regex=false search=<cr>", { desc = "Text Search" })
+keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
 keymap.set("n", "<leader>fd", "<cmd>Telescope live_grep search_dirs=.<cr>", { desc = "Grep String In CWD" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List Buffers" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "List Help Tags" })
