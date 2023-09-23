@@ -55,6 +55,16 @@ return require("packer").startup(function(use)
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
 		branch = "v0.6",
+		config = function()
+			require("ultimate-autopair").setup({
+				fastwarp = {
+					enable = true,
+					enable_normal = true,
+					map = "<C-e>",
+					cmap = "<C-e>",
+				},
+			})
+		end,
 	})
 	use({
 		"Wansmer/treesj",
