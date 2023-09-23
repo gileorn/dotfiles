@@ -18,7 +18,7 @@ lspformat.setup()
 local keymap = vim.keymap
 
 local on_attach = function(client)
-	lspformat.on_attach(client)
+	-- lspformat.on_attach(client)
 end
 
 -- enable autocompletion (assign to every lsp server config)

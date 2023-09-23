@@ -10,8 +10,8 @@ require("nvim-surround").setup({
 		-- normal_cur = "gZ",
 		-- normal_line = "gzgz",
 		-- normal_cur_line = "gZgZ",
-		-- visual = "gz",
-		-- visual_line = "gZ",
+		visual = "gz",
+		visual_line = "gz",
 	},
 })
 
