@@ -55,6 +55,20 @@ Personalized development environment (PDE), a term that was brought up by [TJ De
   </div>
 </details>
 
+<details>
+  <summary>Zen Mode with zen-mode Neovim plugin</summary>
+  <div>
+    <img src="/img/zen-mode.png"></img>
+  </div>
+</details>
+
+<details>
+  <summary>Instance stats with gotop CLI tool</summary>
+  <div>
+    <img src="/img/gotop.png"></img>
+  </div>
+</details>
+
 ## The real heroes of this setup
 
 - [neovim](https://github.com/neovim/neovim) and [tmux](https://github.com/tmux/tmux) as a foundation
