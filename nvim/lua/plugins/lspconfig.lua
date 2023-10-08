@@ -39,6 +39,8 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["mdx_analyzer"].setup({})
+
 lspconfig.eslint.setup({
 	settings = {
 		quiet = true,

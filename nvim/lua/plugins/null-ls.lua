@@ -13,6 +13,15 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.prettierd.with({
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"markdown",
+				"markdown.mdx",
+				"mdx",
+			},
 			generator_opts = {
 				command = "prettierd",
 				args = { "$FILENAME" },
