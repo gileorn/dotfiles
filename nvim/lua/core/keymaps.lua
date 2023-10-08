@@ -73,6 +73,9 @@ keymap.set("n", "<leader>pi", ":PackerInstall<CR>", { desc = "Install All Plugin
 -- mason
 keymap.set("n", "<leader>m", ":Mason<CR>")
 
+-- zen-mode
+keymap.set("n", "<leader>z", ":ZenMode<CR>")
+
 -- vim-tmux-navigator
 keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateDown<cr>", { noremap = true })
 keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateUp<cr>", { noremap = true })

@@ -39,17 +39,22 @@ return require("packer").startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- ===================================
-	-- utility
+	-- UI
 	-- ===================================
 	use("nvim-lualine/lualine.nvim")
+	use("kyazdani42/nvim-web-devicons")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("folke/zen-mode.nvim")
+
+	-- ===================================
+	-- utility
+	-- ===================================
 	use("folke/which-key.nvim")
 	use("rcarriga/nvim-notify")
 	use("szw/vim-maximizer")
 	use("kylechui/nvim-surround")
-	use("kyazdani42/nvim-web-devicons")
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
-	use("lukas-reineke/indent-blankline.nvim")
 	use("numToStr/Comment.nvim")
 	use({
 		"altermo/ultimate-autopair.nvim",
