@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
 	-- navigation
 	-- ===================================
 	use("ggandor/leap.nvim")
+	use("mg979/vim-visual-multi")
 	use("ThePrimeagen/harpoon")
 	use("nvim-tree/nvim-tree.lua")
 	use("petertriho/nvim-scrollbar")

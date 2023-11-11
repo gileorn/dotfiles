@@ -49,7 +49,7 @@ vim.o.timeoutlen = 300
 vim.g.gitblame_enabled = 0
 
 vim.filetype.add({
-  extension = {
-    mdx = "mdx",
-  },
+	extension = {
+		mdx = "mdx",
+	},
 })

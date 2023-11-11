@@ -8,11 +8,13 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 	},
-	-- enable indentation
-	indent = { enable = true },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
 	autotag = { enable = true, enable_close_on_slash = false },
+	context_commentstring = {
+		enable = true,
+	},
 	-- ensure these language parsers are installed
+	auto_install = true,
 	ensure_installed = {
 		"json",
 		"javascript",
@@ -32,9 +34,8 @@ treesitter.setup({
 		"dockerfile",
 		"gitignore",
 	},
-	-- auto install above language parsers
-	auto_install = true,
-	context_commentstring = {
-		enable = true,
-	},
 })
+
+-- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+-- vim.treesitter.language.register("mdx", "markdown")
+vim.treesitter.language.register("markdown", "mdx")

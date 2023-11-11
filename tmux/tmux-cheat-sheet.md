@@ -24,10 +24,4 @@
 ## Panes
 
 `<prefix>x` - close active pane
-`<prefix>%` - create a vertical split with a new pane
-`<prefix>"` - create a horizontal split with a new pane
-`<prefix><space>` - switch between panes layout (horizontal and vertical)
-`<prefix>q` - see panes numbers
-`<prefix>{` or `<prefix>}` - swap panes
-`<prefix>z` - make pane fill the whole window
-`<prefix>!` - create a window from the current pane
+<prefix>%`- create a vertical split with a new pane`<prefix>"`- create a horizontal split with a new pane`<prefix><space>`- switch between panes layout (horizontal and vertical)`<prefix>q`- see panes numbers`<prefix>{`or`<prefix>}`- swap panes`<prefix>z`- make pane fill the whole window`<prefix>!` - create a window from the current pane
