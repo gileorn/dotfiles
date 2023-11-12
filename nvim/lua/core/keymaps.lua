@@ -3,9 +3,11 @@ if not luasnip_status then
 	return
 end
 
+local harpoon_mark = require("harpoon.mark")
+local harpoon_ui = require("harpoon.ui")
+
 local keymap = vim.keymap
 
-vim.g.mapleader = " "
 vim.g.tmux_navigator_no_mappings = 1 -- disable default tmux navigator keymaps
 
 ------------------------
@@ -147,6 +149,25 @@ keymap.set("n", "<leader>r", ":Spectre<CR>", { desc = "Global Find & Replace" })
 vim.keymap.set("n", "<leader>ch", require("hover").hover, { desc = "Show Hover Documentation" })
 vim.keymap.set("n", "<leader>cH", require("hover").hover_select, { desc = "Show Hover Documentation with Select" })
 
+-- harpoon
+-- this was hl for Harpoon List and ha for Harpoon Add
+-- but then I moved from hjkl to jkl; and muscle memory stuck
+vim.keymap.set("n", "<leader>ja", harpoon_mark.add_file)
+vim.keymap.set("n", "<leader>j;", harpoon_ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<C-h>", function()
+	harpoon_ui.nav_file(1)
+end)
+vim.keymap.set("n", "<C-t>", function()
+	harpoon_ui.nav_file(2)
+end)
+vim.keymap.set("n", "<C-n>", function()
+	harpoon_ui.nav_file(3)
+end)
+vim.keymap.set("n", "<C-s>", function()
+	harpoon_ui.nav_file(4)
+end)
+
 -- luasnip
 vim.keymap.set({ "i" }, "<C-K>", function()
 	luasnip.expand()
@@ -162,3 +183,31 @@ vim.keymap.set({ "i", "s" }, "<C-E>", function()
 		luasnip.change_choice(1)
 	end
 end, { silent = true })
+
+-- hlslens
+vim.api.nvim_set_keymap(
+	"n",
+	"n",
+	[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"N",
+	[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>/",
+	"<Cmd>noh<CR>",
+	{ noremap = true, silent = true, desc = "Clear Search Highlight" }
+)
+
+-- leap
+vim.keymap.set("n", "s", "<Plug>(leap-forward-to)", { noremap = true })
+vim.keymap.set("n", "S", "<Plug>(leap-backward-to)", { noremap = true })

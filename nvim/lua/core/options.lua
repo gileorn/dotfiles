@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- colorscheme
+vim.cmd.colorscheme("catppuccin")
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true
@@ -53,3 +56,11 @@ vim.filetype.add({
 		mdx = "mdx",
 	},
 })
+
+-- recommended settings from nvim-tree documentation
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- nvim-cmp
+vim.opt.completeopt = "menu,menuone,noselect,noinsert"
+vim.opt.pumheight = 7 -- number of suggestions in the popup

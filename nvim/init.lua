@@ -1,29 +1,20 @@
-require("core.options")
-require("core.colorscheme")
+-- bootstrap Lazy plugin manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- leader key must be mapped before initializing Lazy
+vim.g.mapleader = " "
+
+require("lazy").setup("plugins")
 require("core.keymaps")
-
-require("plugins-setup")
-
-require("plugins.harpoon")
-require("plugins.nvim-tree")
-require("plugins.treesitter")
-require("plugins.gitsigns")
-require("plugins.lualine")
-require("plugins.telescope")
-require("plugins.nvim-cmp")
-require("plugins.mason")
-require("plugins.lspconfig")
-require("plugins.which-key")
-require("plugins.null-ls")
-require("plugins.toggleterm")
-require("plugins.leap")
-require("plugins.hlslens")
-require("plugins.indent-blankline")
-require("plugins.comment")
-require("plugins.nvim-scrollbar")
-require("plugins.nvim-surround")
-require("plugins.nvim-notify")
-require("plugins.typescript-tools")
-require("plugins.trouble")
-require("plugins.diffview")
-require("plugins.hover")
+require("core.options")
