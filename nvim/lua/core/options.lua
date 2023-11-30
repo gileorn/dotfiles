@@ -64,3 +64,20 @@ vim.g.loaded_netrwPlugin = 1
 -- nvim-cmp
 vim.opt.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.pumheight = 7 -- number of suggestions in the popup
+
+vim.diagnostic.config({
+	virtual_text = {
+		source = "always", -- Or "if_many"
+	},
+	float = {
+		source = "always", -- Or "if_many"
+	},
+})
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or "double"
+	opts.max_width = opts.max_width or 80
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end

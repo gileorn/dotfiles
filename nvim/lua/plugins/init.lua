@@ -36,6 +36,10 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	"folke/zen-mode.nvim",
 	{
+		"stevearc/dressing.nvim",
+		opts = {},
+	},
+	{
 		"goolord/alpha-nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
@@ -52,7 +56,7 @@ return {
 	"kylechui/nvim-surround",
 	{ "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" },
 	{ "akinsho/toggleterm.nvim", version = "*" },
-	"numToStr/Comment.nvim",
+	{ "numToStr/Comment.nvim", opts = {} },
 	{
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },

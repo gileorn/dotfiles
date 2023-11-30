@@ -9,6 +9,17 @@ return {
 			timeout = 1000,
 		})
 
-		vim.notify = notify
+		-- vim.notify = notify
+
+		local banned_messages = { "No information available" }
+
+		vim.notify = function(msg, ...)
+			for _, banned in ipairs(banned_messages) do
+				if msg == banned then
+					return
+				end
+			end
+			notify(msg, ...)
+		end
 	end,
 }

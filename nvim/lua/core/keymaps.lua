@@ -63,6 +63,9 @@ keymap.set("n", "<leader>cp", ':let @+ = expand("%")<cr>', { desc = "Copy File P
 -- rename
 keymap.set("n", "<leader>cn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 
+-- show hover docs
+keymap.set("n", "<leader>ch", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show Hover Docs", noremap = true })
+
 ------------------------
 -- PLUGIN KEYMAPS
 ------------------------
@@ -144,10 +147,6 @@ keymap.set("n", "<leader>gr", ":DiffviewFileHistory<CR>", { desc = "View Full Re
 
 -- spectre
 keymap.set("n", "<leader>r", ":Spectre<CR>", { desc = "Global Find & Replace" })
-
--- hover
-vim.keymap.set("n", "<leader>ch", require("hover").hover, { desc = "Show Hover Documentation" })
-vim.keymap.set("n", "<leader>cH", require("hover").hover_select, { desc = "Show Hover Documentation with Select" })
 
 -- harpoon
 -- this was hl for Harpoon List and ha for Harpoon Add

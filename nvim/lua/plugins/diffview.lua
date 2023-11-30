@@ -22,7 +22,7 @@ return {
 		},
 		view = {
 			default = {
-				layout = "diff2_vertical",
+				layout = "diff2_horizontal",
 			},
 		},
 		file_panel = {
@@ -32,8 +32,8 @@ return {
 				folder_statuses = "only_folded",
 			},
 			win_config = {
-				position = "left",
-				width = 70,
+				position = "bottom",
+				height = 15,
 			},
 		},
 	},
