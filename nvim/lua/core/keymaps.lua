@@ -70,10 +70,8 @@ keymap.set("n", "<leader>ch", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show
 -- PLUGIN KEYMAPS
 ------------------------
 
--- packer
-keymap.set("n", "<leader>ps", ":PackerStatus<CR>", { desc = "Status | List All Plugins" })
-keymap.set("n", "<leader>pu", ":PackerUpdate<CR>", { desc = "Update All Plugins" })
-keymap.set("n", "<leader>pi", ":PackerInstall<CR>", { desc = "Install All Plugins" })
+-- lazy
+keymap.set("n", "<leader>p", ":Lazy<CR>", { desc = "Lazy: Plugin management" })
 
 -- mason
 keymap.set("n", "<leader>m", ":Mason<CR>")
