@@ -1,7 +1,5 @@
 # Neovim Personalized Development Environment
 
-Personalized development environment (PDE), a term that was brought up by [TJ DeVries](https://github.com/tjdevries) in this [video essay on why would someone use Neovim](https://www.youtube.com/watch?v=QMVIJhC9Veg).
-
 ![ui overview](./img/overview.png)
 
 ## Overview, UI and features
