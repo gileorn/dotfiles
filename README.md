@@ -123,7 +123,6 @@
 - [mason](https://github.com/williamboman/mason.nvim) - package manager for LSPs and linters
 - [lightbulb](https://github.com/kosayoda/nvim-lightbulb) - code actions indicator
 - [code-action-menu](https://github.com/weilbith/nvim-code-action-menu) - smart contextual code action menu
-- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) - autoformatting on save
 - [lspconfig](https://github.com/neovim/nvim-lspconfig) - configuring LSP servers
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - enhanced code highlight and analysis for other tools
 

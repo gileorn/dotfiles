@@ -1,10 +1,7 @@
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
-	return
-end
-
+local luasnip = require("luasnip")
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
+local conform = require("conform")
 
 local keymap = vim.keymap
 
@@ -120,6 +117,15 @@ keymap.set(
 	"<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
 	{ desc = "Find Files including hidden" }
 )
+
+-- conform
+vim.keymap.set("n", "<leader>cF", function()
+	conform.format({
+		lsp_fallback = true,
+		async = false,
+		timeout_ms = 500,
+	})
+end, { desc = "Toggle Trouble Plugin Visibility" })
 
 -- trouble
 vim.keymap.set("n", "<leader>cc", "<cmd>TroubleToggle<cr>", { desc = "Toggle Trouble Plugin Visibility" })
