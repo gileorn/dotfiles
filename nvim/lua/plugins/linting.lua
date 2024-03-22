@@ -1,9 +1,6 @@
 return {
 	"mfussenegger/nvim-lint",
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
 
@@ -13,11 +10,13 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
-			python = { "pylint" },
+			css = { "stylelint" },
+			scss = { "stylelint" },
 		}
 
+		-- Create autocommand which carries out the actual linting
+		-- on the specified events.
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = lint_augroup,
 			callback = function()
