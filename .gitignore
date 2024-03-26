@@ -3,6 +3,7 @@
 
 # Except specified files and directories
 !.gitignore
+!.zshrc
 !README.md
 !/nvim
 !/nvim/**
