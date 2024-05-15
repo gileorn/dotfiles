@@ -1,3 +1,8 @@
+local js_formatters = {
+	"prettier",
+	"eslint_d",
+}
+
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -6,10 +11,10 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				javascript = js_formatters,
+				javascriptreact = js_formatters,
+				typescript = js_formatters,
+				typescriptreact = js_formatters,
 				svelte = { "prettier" },
 				css = { "prettier", "stylelint" },
 				html = { "prettier" },
@@ -20,7 +25,7 @@ return {
 				lua = { "stylua" },
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
 				timeout_ms = 3000,
 			},

@@ -5,6 +5,13 @@ local conform = require("conform")
 
 local keymap = vim.keymap
 
+local search_by_word = function()
+	local conf = require("telescope.config").values
+	require("telescope.builtin").live_grep({
+		vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
+	})
+end
+
 vim.g.tmux_navigator_no_mappings = 1 -- disable default tmux navigator keymaps
 
 ------------------------
@@ -97,7 +104,7 @@ keymap.set("n", "<leader>l", ":NvimTreeFindFile<CR>", { desc = "Reveal current f
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string use_regex=false search=<cr>", { desc = "Text Search" })
+keymap.set("n", "<leader>fs", search_by_word, { desc = "Text Search" })
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep String" })
 keymap.set("n", "<leader>fd", "<cmd>Telescope live_grep search_dirs=.<cr>", { desc = "Grep String In CWD" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List Buffers" })

@@ -135,10 +135,10 @@ return {
 				-- on_attach = on_attach,
 			})
 
-			lspconfig["tailwindcss"].setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			-- lspconfig["tailwindcss"].setup({
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- })
 
 			lspconfig["stylelint_lsp"].setup({
 				capabilities = capabilities,
@@ -152,7 +152,7 @@ return {
 				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 			})
 
-			lspconfig["mdx_analyzer"].setup({})
+			-- lspconfig["mdx_analyzer"].setup({})
 
 			lspconfig["lua_ls"].setup({
 				capabilities = capabilities,
@@ -174,7 +174,7 @@ return {
 				},
 			})
 
-			lspconfig["gopls"].setup({ on_attach = on_attach, capabilities = capabilities })
+			-- lspconfig["gopls"].setup({ on_attach = on_attach, capabilities = capabilities })
 		end,
 	},
 }
