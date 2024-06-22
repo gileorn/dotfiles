@@ -1,7 +1,7 @@
 return {
 	"folke/zen-mode.nvim",
 	"kyazdani42/nvim-web-devicons",
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{
 		"stevearc/dressing.nvim",
 		opts = {},
