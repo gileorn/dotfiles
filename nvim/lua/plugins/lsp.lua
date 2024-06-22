@@ -3,18 +3,12 @@ return {
 	{
 		"folke/trouble.nvim",
 		opts = {
-			use_diagnostic_signs = true,
-			mode = "lsp_references",
-			position = "bottom",
-			auto_close = true,
-			height = 20,
-			action_keys = {
-				previous = "l",
-				next = "k",
-			},
-			auto_jump = { "lsp_references", "lsp_implementations", "lsp_definitions", "lsp_type_definitions" },
-			include_declaration = { "lsp_definitions" },
+			focus = true,
+			follow = true,
+			auto_jump = true,
+			multiline = true,
 		},
+		cmd = "Trouble",
 	},
 	{
 		"lewis6991/hover.nvim",
@@ -45,11 +39,9 @@ return {
 				"tsserver",
 				"html",
 				"cssls",
-				"tailwindcss",
 				"stylelint_lsp",
 				"lua_ls",
 				"emmet_ls",
-				"svelte",
 			},
 			automatic_installation = true, -- not the same as ensure_installed
 		},
@@ -130,14 +122,25 @@ return {
 				on_attach = on_attach,
 			})
 
-			lspconfig["svelte"].setup({
-				capabilities = capabilities,
-				-- on_attach = on_attach,
-			})
+			-- lspconfig["eslint"].setup({
+			-- 	-- settings = {
+			-- 	-- 	codeActionOnSave = { enable = true, mode = "all" },
+			-- 	-- 	format = true,
+			-- 	-- 	codeAction = {
+			-- 	-- 		showDocumentation = false,
+			-- 	-- 	},
+			-- 	-- },
+			-- 	on_attach = function(client, bufnr)
+			-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 			buffer = bufnr,
+			-- 			command = "EslintFixAll",
+			-- 		})
+			-- 	end,
+			-- })
 
-			-- lspconfig["tailwindcss"].setup({
+			-- lspconfig["svelte"].setup({
 			-- 	capabilities = capabilities,
-			-- 	on_attach = on_attach,
+			-- 	-- on_attach = on_attach,
 			-- })
 
 			lspconfig["stylelint_lsp"].setup({
@@ -151,8 +154,6 @@ return {
 				on_attach = on_attach,
 				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 			})
-
-			-- lspconfig["mdx_analyzer"].setup({})
 
 			lspconfig["lua_ls"].setup({
 				capabilities = capabilities,

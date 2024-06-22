@@ -3,6 +3,8 @@ local opt = vim.opt
 -- colorscheme
 vim.cmd.colorscheme("catppuccin")
 
+vim.opt.showtabline = 0
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true
@@ -47,9 +49,6 @@ vim.o.mouse = "a"
 -- Which key
 vim.o.timeout = true
 vim.o.timeoutlen = 300
-
--- git blame
-vim.g.gitblame_enabled = 0
 
 vim.filetype.add({
 	extension = {

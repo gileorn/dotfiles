@@ -1,5 +1,12 @@
 return {
-	"f-person/git-blame.nvim",
+	{
+		"f-person/git-blame.nvim",
+		event = "BufRead",
+		config = {
+			enabled = false,
+			delay = 0,
+		},
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {

@@ -1,5 +1,4 @@
 return {
-	"ggandor/leap.nvim",
 	"christoomey/vim-tmux-navigator",
 	{
 		"ThePrimeagen/harpoon",

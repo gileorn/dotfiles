@@ -3,31 +3,6 @@ return {
 	{ "folke/which-key.nvim", opts = {} },
 	{ "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" },
 	{
-		"rcarriga/nvim-notify",
-		config = function()
-			local notify = require("notify")
-
-			notify.setup({
-				render = "compact",
-				stages = "static",
-				timeout = 1000,
-			})
-
-			-- vim.notify = notify
-
-			local banned_messages = { "No information available" }
-
-			vim.notify = function(msg, ...)
-				for _, banned in ipairs(banned_messages) do
-					if msg == banned then
-						return
-					end
-				end
-				notify(msg, ...)
-			end
-		end,
-	},
-	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
 		config = function()
@@ -66,6 +41,7 @@ return {
 		"kylechui/nvim-surround",
 		opts = {
 			-- changed keymaps so that leap and surround plugins could happily live together
+			-- upd: changed leap to flash, but the cause is the same
 			-- see https://github.com/ggandor/leap.nvim/discussions/59
 			keymaps = {
 				normal = "gz",

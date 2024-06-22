@@ -1,11 +1,10 @@
 local js_formatters = {
-	"prettier",
-	"eslint_d",
+	"prettierd",
+	-- eslint should be here, but it is slow as hell on bigger projects
 }
 
 return {
 	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
 
@@ -15,20 +14,30 @@ return {
 				javascriptreact = js_formatters,
 				typescript = js_formatters,
 				typescriptreact = js_formatters,
-				svelte = { "prettier" },
-				css = { "prettier", "stylelint" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
+				svelte = { "prettierd" },
+				css = { "prettierd", "stylelint" },
+				html = { "prettierd" },
+				json = { "prettierd" },
+				yaml = { "prettierd" },
+				markdown = { "prettierd" },
+				graphql = { "prettierd" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
-				lsp_fallback = false,
+				lsp_fallback = true,
 				async = false,
-				timeout_ms = 3000,
+				timeout_ms = 5000,
 			},
 		})
+
+		-- eslint (even deamon) is so slow that it should be
+		-- executed only when needed, not on every save
+		vim.keymap.set("n", "<leader>q", function()
+			conform.format({
+				timeout = 8000,
+				async = true,
+				formatters = { "eslint_d" },
+			})
+		end, { desc = "Format file" })
 	end,
 }

@@ -102,7 +102,6 @@
 
 - [lualine](https://github.com/nvim-lualine/lualine.nvim) - statusline for buffers with git integration
 - [which-key](https://github.com/folke/which-key.nvim) - keymap manager
-- [nvim-notify](https://github.com/rcarriga/nvim-notify) - notifications manager
 - [vim-maximizer](https://github.com/szw/vim-maximizer) - to quickly maximize the current split in the buffer
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - to conveniently change matching wrapping characters
 - [nvim-surround](https://github.com/kylechui/nvim-surround/tree/main) - to surround text with special characters

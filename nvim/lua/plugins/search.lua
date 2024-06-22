@@ -3,11 +3,47 @@ return {
 	"nvim-pack/nvim-spectre",
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			label = { before = false, after = true, style = "overlay", min_pattern_length = 2, bold = true },
+			modes = {
+				treesitter = {
+					label = {
+						before = true,
+						after = false,
+						style = "overlay",
+						bold = true,
+					},
+				},
+			},
+		},
+		keys = {
+			{
+				"s",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+		},
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-telescope/telescope-fzf-native.nvim" },
 		config = function()
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")
+			local open_with_trouble = require("trouble.sources.telescope").open
 
 			telescope.setup({
 				defaults = {
@@ -30,7 +66,7 @@ return {
 						i = {
 							["<C-l>"] = actions.move_selection_previous,
 							["<C-k>"] = actions.move_selection_next,
-							["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+							["<C-t>"] = open_with_trouble,
 						},
 					},
 					vimgrep_arguments = {
@@ -55,7 +91,6 @@ return {
 			})
 
 			telescope.load_extension("fzf")
-			telescope.load_extension("notify")
 		end,
 	},
 }
